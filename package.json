@@ -1,0 +1,16 @@
+{
+  "name": "gdp-diagramm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.4.3",
+    "serve": "^14.2.0"
+  }
+}
