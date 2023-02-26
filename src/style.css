@@ -7,5 +7,29 @@
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.diagramm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  background-color: #4ecdc4;
+  width: 70%;
+  margin: 0 auto;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.diagramm_item {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.diagramm_item_bar {
+  border: 2px solid #fff;
+  height: 20px;
+  border-radius: 4px;
 }
