@@ -3,7 +3,7 @@
  * @return функция вощвращающая string содержащая в себе hex код цвета
  * */
 
-function getUniqueColorGenerator (total = 1000) {
+export default function getUniqueColorGenerator(total = 1000) {
     //начинаем с синего цвета
     let curColor = parseInt("0000FF", 16);
     //высчитываем шаг на который будет изменяться цвет при каждом вызове

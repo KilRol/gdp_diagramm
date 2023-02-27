@@ -1,8 +1,10 @@
 /**
  * @constructor
- * @param {[]} data - gpd data
- *
+ * @param {[]} data - данные ввп
+ * @returns {HTMLDivElement} диаграмма в виде HTML-блоке
  */
+
+import getUniqueColorGenerator from './getUniqueColorGenerator.js'
 
 export function draw(data) {
   const max = data.reduce((acc, item) => {
@@ -10,18 +12,20 @@ export function draw(data) {
     return acc;
   }, 0);
 
-  const diagramm = data.reduce((acc, item) => {
+  const colorGenerator = getUniqueColorGenerator(data.length)
+
+  const diagramm = data.reduce((acc, item, index) => {
     const container = document.createElement("div");
     const bar = document.createElement("div");
     const info = document.createElement("p");
 
-    //Current Pallete https://coolors.co/292f36-4ecdc4-ffffff-ff6b6b-ffffff
     container.className = "diagramm_item";
     bar.className = "diagramm_item_bar";
-    bar.style.backgroundColor = "#292F36";
+
+    bar.style.backgroundColor = `#${colorGenerator()}`;
     bar.style.width = `${(1 / max) * item.value * 100}%`;
 
-    info.textContent = `$${item.value} - ${item.name}`;
+    info.textContent = `${index + 1}. $${item.value} - ${item.name}`;
 
     container.appendChild(bar);
     container.appendChild(info);

@@ -1,4 +1,4 @@
-const mergeSort = require('../services/mergeSort');
+import { mergeSort } from "../services/mergeSort";
 
 const normal = (a, b) => a - b;
 const reverse = (a, b) => b - a;
@@ -15,21 +15,21 @@ const testCases = [
         fn: reverse
     },
     {
-        input: [1,6,2,46,8,1],
-        result: [1,1,2,6,8,46],
+        input: [1, 6, 2, 46, 8, 1],
+        result: [1, 1, 2, 6, 8, 46],
         fn: normal,
     }
 ];
 
 test('MergeSort should use custom fn for compare array elements', () => {
-    const arr = [1,2,3];
+    const arr = [1, 2, 3];
     console.log(mergeSort(arr, normal));
-    expect(mergeSort([1,2,3], normal)).toEqual([1,2,3]);
-    expect(mergeSort([1,2,3], reverse)).toEqual([3,2,1]);
+    expect(mergeSort([1, 2, 3], normal)).toEqual([1, 2, 3]);
+    expect(mergeSort([1, 2, 3], reverse)).toEqual([3, 2, 1]);
 })
 
 test('MergeSort should sort array', () => {
-    testCases.forEach(({input, result, fn})=> {
+    testCases.forEach(({ input, result, fn }) => {
         expect(mergeSort(input, fn)).toEqual(result);
     })
 });
